@@ -2,6 +2,7 @@ import mysql.connector
 import tkinter as tk
 from tkinter import *
 from tkinter.ttk import *
+from search_box import *
 import datetime
 def submit(username,password,window_frame,root):
     
@@ -25,9 +26,13 @@ def submit(username,password,window_frame,root):
         users_btn.pack()
         users_btn.place(relx=0.5,rely=0.05)
 
-        patients_btn=tk.Button(next_frame,text="Search Patients[F2]",font=('Times New Roman',16),bg="#feffb7",fg="black",height=2,width=15)
+        patients_btn=tk.Button(next_frame,text="Search Patients[F2]",font=('Times New Roman',16),bg="#feffb7",fg="black",height=2,width=15,command="search_btn")
         patients_btn.pack()
         patients_btn.place(relx=0.6,rely=0.05)
+
+        def search_btn():
+         pass
+
         def tick():
             current_time=datetime.datetime.now().strftime('%d-%m-%y %H:%M:%S')
             clock_label.config(text="Date & Time: "+ current_time)
@@ -39,18 +44,12 @@ def submit(username,password,window_frame,root):
         clock_label.place(relx=0.77,rely=0.07)
         tick()
 
-        image_staff = tk.PhotoImage(file="D:\\Python_Design\\Staff.png")
-        img_label_staff = tk.Label(next_frame, image=image_staff, bg="#FEFFB7", bd=2, relief="solid")
-        img_label_staff.image = image_staff  # keep a reference to the image object
-        img_label_staff.pack(side=LEFT,padx=15,pady=50)
 
-        add_staff_btn=tk.Button(img_label_staff, text="Add Staff",bg="#B93030", fg="white", height=2, width=15)
-        add_staff_btn.place(relx=0.5,rely=0.5,anchor="center")
 
         img_patient = tk.PhotoImage(file="D:\\Python_Design\\Patient.png")
         img_label_patient = tk.Label(next_frame, image=img_patient, bg="#FEFFB7", bd=2, relief="solid")
         img_label_patient.image = img_patient  # keep a reference to the image object
-        img_label_patient.pack(side=LEFT,padx=15,pady=50)
+        img_label_patient.pack(side=LEFT,padx=15,pady=50,expand=TRUE)
 
         add_patient_btn=tk.Button(img_label_patient, text="Add Patient",bg="#B93030", fg="white", height=2, width=15)
         add_patient_btn.place(relx=0.5,rely=0.5,anchor="center")
@@ -58,7 +57,7 @@ def submit(username,password,window_frame,root):
         img_appo = tk.PhotoImage(file="D:\\Python_Design\\appointment.png")
         img_label_appo = tk.Label(next_frame, image=img_appo, bg="#FEFFB7", bd=2, relief="solid")
         img_label_appo.image = img_appo  # keep a reference to the image object
-        img_label_appo.pack(side=LEFT,padx=15,pady=50)
+        img_label_appo.pack(side=LEFT,padx=15,pady=50,expand=TRUE)
 
         add_appo_btn=tk.Button(img_label_appo, text="Manage Appointment",bg="#B93030", fg="white", height=2, width=18)
         add_appo_btn.place(relx=0.5,rely=0.5,anchor="center")
@@ -66,9 +65,9 @@ def submit(username,password,window_frame,root):
         img_bill = tk.PhotoImage(file="D:\\Python_Design\\bills.png")
         img_label_bill = tk.Label(next_frame, image=img_bill, bg="#FEFFB7", bd=2, relief="solid")
         img_label_bill.image = img_bill  # keep a reference to the image object
-        img_label_bill.pack(side=LEFT,padx=15,pady=50)
+        img_label_bill.pack(side=LEFT,padx=15,pady=50,expand=TRUE)
 
-        accounts_btn=tk.Button(img_label_bill, text="Accounts",bg="#B93030", fg="white", height=2, width=15)
+        accounts_btn=tk.Button(img_label_bill, text="Billing",bg="#B93030", fg="white", height=2, width=15)
         accounts_btn.place(relx=0.5,rely=0.5,anchor="center")
 
 
