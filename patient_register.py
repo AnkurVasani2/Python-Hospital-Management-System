@@ -132,9 +132,15 @@ c8.grid(row=8,column=6,padx=2,pady=5,sticky='w')
 c9 = Checkbutton(frame, text='Latex',variable=var9, onvalue=1, offvalue=0)
 c9.grid(row=8,column=7,padx=2,pady=5,sticky='w')
 
+file_path=""
+
 def select_file():
+    global file_path
     file_path = filedialog.askopenfilename()
 
+def register():
+    gloabl file_path
+    print(file_path)
 Photo=Label(frame,text="Photo:",font=font,bg=bg)
 Photo.grid(row=9,column=4,padx=2,pady=5,sticky='e')
 from tkinter import filedialog
@@ -142,8 +148,7 @@ photo_entry = Button(frame, text="Select File", command=select_file)
 photo_entry.grid(row=9,column=5,padx=2,pady=5,sticky='w')
 
 
-def register():
- pass
+
 
 register=Button(frame, text="Register", width=15,command=register,bg="#B93030", fg="white", height=2).grid(row=10,column=5)
 
